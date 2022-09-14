@@ -15,7 +15,7 @@ datasource db {
 
 //Criando a tabela de Games
 model Game {
-  id        String @id
+  id        String @id @default(uuid())
   title     String
   bannerUrl String
 
@@ -24,7 +24,7 @@ model Game {
 
 //Criando a tabela de anúncios
 model Ad {
-  id              String   @id
+  id              String   @id @default(uuid())
   gameId          String
   name            String
   yearsPlaying    Int
