@@ -1,10 +1,12 @@
 import express, { query } from 'express'
+import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 import { convertHourStringToMinutes } from './utils/convert-hour-string-to-minutes';
 import { convertMinuteToHourString } from './utils/convert-minutes-to-hour-string';
 
 const app = express();
 app.use(express.json()); //permite o express a entender informações em json 
+app.use(cors());//aberto para todos os front-end fazer requisição
 
 const prisma = new PrismaClient({
   log: ['query']
