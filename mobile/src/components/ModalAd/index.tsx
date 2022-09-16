@@ -16,6 +16,7 @@ export function ModalAd({ discord, onClose, ...rest }: Props) {
   return (
 
     <Modal
+      animationType="fade"
       statusBarTranslucent
       transparent
       {...rest}
