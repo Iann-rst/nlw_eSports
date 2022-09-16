@@ -25,15 +25,33 @@ export function CreateAdModal() {
   const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
 
-  function handleCreateAd(event: FormEvent) {
+  //Função para pegar as informações do formulário e criar um AD no banco de dados
+  async function handleCreateAd(event: FormEvent) {
     event.preventDefault();
 
     const formData = new FormData(event.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
 
-    console.log(data);
-    console.log(weekDays);
-    console.log(useVoiceChannel)
+    //Validação
+    if (!data.name) {
+      return;
+    }
+    try {
+      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hourStart: data.hourStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannel: useVoiceChannel
+      })
+
+      alert('Anúncio criado com sucesso!')
+    } catch (err) {
+      console.log(err);
+      alert('Erro ao criar o anúncio!')
+    }
   }
 
   useEffect(() => {
