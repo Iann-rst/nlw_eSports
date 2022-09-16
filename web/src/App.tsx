@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
+import axios from 'axios'
 
 /* Componentes de Games e Publicar Banner */
 import logoImage from './assets/logo-nlw-esports.svg';
@@ -23,8 +24,8 @@ function App() {
 
   useEffect(() => {
     //Faz uma requisição no nosso servidor para buscar a lista de jogos
-    fetch('http://localhost:3333/games').then(response => response.json()).then(data => {
-      setGames(data)
+    axios('http://localhost:3333/games').then(response => {
+      setGames(response.data)
     })
   }, [])
 
