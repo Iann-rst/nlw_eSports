@@ -7,6 +7,7 @@ import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { GameParams } from '../../@types/navigation';
 import { Heading } from '../../components/Heading';
 import { AdsProps, DuoCard } from '../../components/DuoCard'
+import { ModalAd } from '../../components/ModalAd';
 
 
 import logoImg from '../../assets/logo-nlw-esports.png'
@@ -16,6 +17,8 @@ import { useEffect, useState } from 'react';
 
 export function Game() {
   const [duos, setDuos] = useState<AdsProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('iann#1212')
+
   const route = useRoute();
   const game = route.params as GameParams;
 
@@ -25,6 +28,7 @@ export function Game() {
   function handleGoBack() {
     navigation.goBack()
   }
+
 
 
   useEffect(() => {
@@ -77,7 +81,11 @@ export function Game() {
           )}
         />
 
-
+        <ModalAd
+          visible={discordDuoSelected.length > 0}
+          discord="iann#1212"
+          onClose={() => setDiscordDuoSelected('')}
+        />
       </SafeAreaView>
     </Background>
   );
