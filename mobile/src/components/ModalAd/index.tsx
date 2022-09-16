@@ -1,7 +1,8 @@
-import React from 'react';
-import { Modal, View, ModalProps, Text, TouchableOpacity } from 'react-native';
+import { useState } from 'react';
+import { Modal, View, ModalProps, Text, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons'
 import { CheckCircle } from 'phosphor-react-native';
+import * as Clipboard from 'expo-clipboard';
 
 import { styles } from './styles';
 import { THEME } from '../../theme';
@@ -13,6 +14,16 @@ interface Props extends ModalProps {
 }
 
 export function ModalAd({ discord, onClose, ...rest }: Props) {
+  const [isCopping, setIsCopping] = useState(false);
+
+  //Função para copiar o discord do usuário quando clicar no botão do discord
+  async function handleCopyDiscordUserToClipboard() {
+    setIsCopping(true);
+    await Clipboard.setStringAsync(discord);
+    Alert.alert('Discord copiado!', 'Usuário copiado para sua área de transferência.');
+    setIsCopping(false);
+  }
+
   return (
 
     <Modal
@@ -40,9 +51,13 @@ export function ModalAd({ discord, onClose, ...rest }: Props) {
             Adicione no Discord
           </Text>
 
-          <TouchableOpacity style={styles.discordButton}>
+          <TouchableOpacity
+            style={styles.discordButton}
+            onPress={handleCopyDiscordUserToClipboard}
+            disabled={isCopping}
+          >
             <Text style={styles.discord}>
-              {discord}
+              {isCopping ? <ActivityIndicator color={THEME.COLORS.PRIMARY} /> : discord}
             </Text>
           </TouchableOpacity>
         </View>
