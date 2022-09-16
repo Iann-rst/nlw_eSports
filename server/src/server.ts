@@ -45,7 +45,7 @@ app.get('/games', async (request, response) => {
 //rota para criação de anúncios (um anuncio sempre tem um jogo)
 app.post('/games/:id/ads', async (request, response) => {
   const gameId = request.params.id;
-  const body = request.body;
+  const body: any = request.body;
 
   const ad = await prisma.ad.create({
     data: {
