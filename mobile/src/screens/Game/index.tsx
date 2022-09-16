@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 
 export function Game() {
   const [duos, setDuos] = useState<AdsProps[]>([]);
-  const [discordDuoSelected, setDiscordDuoSelected] = useState('iann#1212')
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('')
 
   const route = useRoute();
   const game = route.params as GameParams;
@@ -29,7 +29,11 @@ export function Game() {
     navigation.goBack()
   }
 
-
+  //Conectando no banco de dados e recebendo por cada anuncio o id do discord
+  async function getDiscordUser(adsId: string) {
+    fetch(`http://10.0.0.133:3333/ads/${adsId}/discord`).then(response => response.json())
+      .then(data => setDiscordDuoSelected(data.discord))
+  }
 
   useEffect(() => {
     fetch(`http://10.0.0.133:3333/games/${game.id}/ads`)
@@ -67,7 +71,7 @@ export function Game() {
           renderItem={({ item }) => (
             <DuoCard
               data={item}
-              onConnect={() => { }}
+              onConnect={() => { getDiscordUser(item.id) }}
             />
           )}
           horizontal
@@ -83,7 +87,7 @@ export function Game() {
 
         <ModalAd
           visible={discordDuoSelected.length > 0}
-          discord="iann#1212"
+          discord={discordDuoSelected}
           onClose={() => setDiscordDuoSelected('')}
         />
       </SafeAreaView>
