@@ -13,11 +13,11 @@
 
 Nesse NLW eSports, na trilha ignite, foram desenvolvidas 3 aplicações:
 
-  [Back-end](https://github.com/Iann-rst/nlw_eSports/tree/main/server)
+  - [Back-end](https://github.com/Iann-rst/nlw_eSports/tree/main/server)
 
-  [Versão Web](https://github.com/Iann-rst/nlw_eSports/tree/main/web)
+  - [Versão Web](https://github.com/Iann-rst/nlw_eSports/tree/main/web)
 
-  [Versão Mobile](https://github.com/Iann-rst/nlw_eSports/tree/main/mobile)
+  - [Versão Mobile](https://github.com/Iann-rst/nlw_eSports/tree/main/mobile)
 
 ## :rocket: Como Executar?
 
