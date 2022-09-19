@@ -1,4 +1,4 @@
-# NLW eSports
+<h1 align="center"> NLW eSports </h1>
 
 <div align="center">
   <img src=".github/nlw-eSports.png" alt="">
@@ -42,3 +42,12 @@ $ cd mobile
 $ npm install
 $ expo start
 ```
+
+## :man_technologist: Próximas Implementações
+
+ - [ ] Criação do carrossel para a listagem de mais games;
+ - [ ] Utilizar o Radix-UI para o select do Modal;
+ - [ ] Adicionar responsividade;
+ - [ ] Validação com React-Hook-Form;
+ - [ ] Autenticação;
+ - [ ] Expo-Notifications; 
