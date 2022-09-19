@@ -11,12 +11,12 @@
   - Durante os dias 11/09/2022 e 18/09/2022 aconteceu a 9ª edição da NLW, o evento **NLW eSports**. Durante essa edição foi desenvolvido um projeto com foco no eSports e com o objetivo de ajudar gamers a encontrar Duos para jogarem juntos seus games favoritos.
   <br>
   - Nesse NLW eSports, na trilha ignite, foram desenvolvidas 3 aplicações:
-  
-    - [Back-end](https://github.com/Iann-rst/nlw_eSports/tree/main/server);
 
-    - [Versão Web](https://github.com/Iann-rst/nlw_eSports/tree/main/web);
+    - [Back-end](https://github.com/Iann-rst/nlw_eSports/tree/main/server)
 
-    - [Versão Mobile](https://github.com/Iann-rst/nlw_eSports/tree/main/mobile);
+    - [Versão Web](https://github.com/Iann-rst/nlw_eSports/tree/main/web)
+
+    - [Versão Mobile](https://github.com/Iann-rst/nlw_eSports/tree/main/mobile)
 
 ## :rocket: Como Executar?
 
@@ -40,3 +40,4 @@ $ npm run dev
 $ cd mobile
 $ npm install
 $ expo start
+```
