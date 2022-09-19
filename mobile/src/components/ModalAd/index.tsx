@@ -20,7 +20,7 @@ export function ModalAd({ discord, onClose, ...rest }: Props) {
   async function handleCopyDiscordUserToClipboard() {
     setIsCopping(true);
     await Clipboard.setStringAsync(discord);
-    Alert.alert('Discord copiado!', 'Usuário copiado para sua área de transferência.');
+    Alert.alert('Discord copiado!', 'Discord copiado para sua área de transferência.');
     setIsCopping(false);
   }
 
