@@ -1,6 +1,6 @@
-# WEB
+<h1 align="center">Front-end Web<h1>
 
-## :man_computer: Tecnologias utilizadas
+## :man_technologist: Tecnologias utilizadas
 
 - Criação do projeto web utilizando Vite;
 - React;
@@ -10,7 +10,7 @@
 - Radix UI para criar a tela de modal e o checkbox;
 
 
-## Funcionalidades
+## :dart: Funcionalidades
 
 - Criação da Landing Page;
 - Consumo de API (games no back-end);
